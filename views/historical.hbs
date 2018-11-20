@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MASCAR - Everyone ON THE GO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/cover.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+  .btnCus {
+    margin-bottom: 30px;
+    margin-left: 300%;
+  }
+
+  tr, td {
+    text-align: center;
+  }
+
+  </style>
+<body>
+
+{{> navbar}}
+
+
+<div class="jumbotron text-center">
+  <h1>Historical Searches</h1>
+  <p>Previous Search Results</p>
+</div>
+
+<div class="row container-fluid">
+  <form action="/" method="post">
+    <button class="btn btn-danger btn-lg btnCus" type="submit" formaction="/delete">Delete all records</button>
+  </form>
+  <br>
+  <table class="table table-striped">
+    {{#list items}}<tr><td>{{name}}</td><td>{{address}}</td><td><img src={{photo_reference}} width="200" height="200"></td></tr>{{/list}}
+  </table>
+</div>
+
+</body>
+</html>

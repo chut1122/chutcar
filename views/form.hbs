@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MASCAR - Everyone ON THE GO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/cover.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </head>
+
+<body>
+
+{{> navbar}}
+
+
+<div class="jumbotron text-center">
+  <h1>Search Page</h1>
+  <p>For searching places of interest</p>
+</div>
+
+<div class="row container text-center">
+  <div class="col-sm-12">
+    <form id="form" action="/" method="post">
+      <div class="form-group">
+        <label for="addr">Enter address:</label>
+        <input id="addr" name="address" class="form-control" type="text" placeholder="Enter your prefered area"/>
+        <p></p>
+        <label for="name">Enter name:</label>
+        <input id="name" name="name" class="form-control" type="text" placeholder="Enter name"/>
+        <p></p>
+        <label for="places-type">Select type of place:</label>
+        <p></p>
+          <select id="places-type" name="placetype" class="form-control">
+            {{> scrollablelist}}
+          </select>
+        <p></p>
+        <input type="submit" value="Send" formaction="/getplaces"/>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
